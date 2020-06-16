@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 interface ContainerProps {
   size?: 'small' | 'large';
@@ -32,5 +33,14 @@ export const Container = styled.div<ContainerProps>`
         }
       }
     }
+  }
+`;
+
+const activeClassName = 'nav-item-active';
+
+export const StyledLink = styled(NavLink).attrs({ activeClassName })`
+  &.${activeClassName} {
+    border-bottom: 2px solid #ff872c;
+    padding-bottom: 10px;
   }
 `;
